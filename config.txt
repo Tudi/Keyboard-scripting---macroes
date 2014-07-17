@@ -1,0 +1,167 @@
+# only lines that start with keyword are parsed. Some structures need to have same keyword order ( mouse / keyboard / announce.. )
+# config file syntax is strict. If you do not wish to break it then respect it
+# you can get your twitch auth code from here : http://twitchapps.com/tmi
+# there is a difference between lower or upper case names. Most twitch users / channels are lowercase
+# try to not add junk after variable values cause reader will use it ( MAC line ending or whoknows what else )
+# File is ASCII and not UTF-8 or something else.
+# Tipp : Mouse x y coordinates might depend on screen resolution or window size. Make sure you first decide on game resolution before setting click shortcuts
+#
+
+#
+#
+# Game Related
+#
+
+# do not put 0 here or else it might eat 100% CPU. The worker thread will consume at least this amount of time per cycle
+SEND_KEY_THREAD_MINWAIT=500
+
+# Limit actions to this window only. This can be part of the window title. Name is case sensitive ! Note that this file is ASCII but the name of the window can be UTF-8 -> bad things happen
+WINDOW_TITLE_PART=Diablo III
+
+# !! Watch it, you might not be able to do anything if you can't control this application from another PC !!!
+WINDOW_SET_AUTOFOCUS=0
+MOUSE_X_LIMIT_MIN=0
+MOUSE_Y_LIMIT_MIN=0
+MOUSE_X_LIMIT_MAX=1919
+MOUSE_Y_LIMIT_MAX=1196
+#pressing 0 will toggle sending or not sending keys
+SEND_KEY_PAUSE_TOGGLE_KEYCODE=11
+
+#
+# Game buttons
+#
+#
+
+KEY_GROUP=0								only 1 key will pressed from each group per thread cycle
+KEY_IRC_TEXT=Left shift - keep it pressed forever
+KEY_GAME_KEYCODE=42
+KEY_PRESSDOWN_TIME=0					needs to be larger than 0 if we release the key or have multiple keygroups
+KEY_RELEASE_TIME=-1						negative means we will not release this key
+KEY_INTERVAL_TIME=0						only push it once than wait for very very large amount of time
+KEY_INTERVAL_TIME=0						only push it once than wait for very very large amount of time
+KEY_GLOBAL_COOLDOWN=0					when we do not wish to push the next key at the default SEND_KEY_THREAD_MINWAIT interval
+KEY_MOUSE_CHANGE_Y=0					no mouse change
+KEY_MOUSE_KEYCODE=0						no mouse change
+KEY_MOUSE_MOVETYPE=0					no mouse change
+KEY_MOUSE_FLAGS=0						no mouse change
+
+KEY_GROUP=0
+KEY_IRC_TEXT=Numeric 1 - spirit form
+KEY_GAME_KEYCODE=2
+KEY_PRESSDOWN_TIME=100
+KEY_RELEASE_TIME=0
+KEY_INTERVAL_TIME=23100					Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+KEY_MOUSE_CHANGE_X=0
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=0
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+KEY_GROUP=0
+KEY_IRC_TEXT=Numeric 2 - wall of zombies
+KEY_GAME_KEYCODE=3
+KEY_PRESSDOWN_TIME=100
+KEY_RELEASE_TIME=0
+KEY_INTERVAL_TIME=12100						Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+KEY_MOUSE_CHANGE_X=0
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=0
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+KEY_GROUP=0
+KEY_IRC_TEXT=Numeric 3 - gargantuan
+KEY_GAME_KEYCODE=4
+KEY_PRESSDOWN_TIME=100
+KEY_RELEASE_TIME=0
+KEY_INTERVAL_TIME=161000						Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+KEY_MOUSE_CHANGE_X=0
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=0
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+KEY_GROUP=0
+KEY_IRC_TEXT=Numeric 3 - zombi dogs
+KEY_GAME_KEYCODE=5
+KEY_PRESSDOWN_TIME=100
+KEY_RELEASE_TIME=0
+KEY_INTERVAL_TIME=146000						Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+KEY_MOUSE_CHANGE_X=0
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=0
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+KEY_GROUP=0
+KEY_IRC_TEXT=mouse left click - once initial
+KEY_GAME_KEYCODE=0
+KEY_PRESSDOWN_TIME=0
+KEY_RELEASE_TIME=-1
+KEY_INTERVAL_TIME=0							Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+KEY_MOUSE_CHANGE_X=0
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=1
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+	KEY_GROUP=0
+	KEY_IRC_TEXT=mouse left click - try to revive
+	KEY_GAME_KEYCODE=0
+	KEY_PRESSDOWN_TIME=100
+	KEY_RELEASE_TIME=100
+	KEY_INTERVAL_TIME=120000						Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+	KEY_MOUSE_CHANGE_X=0
+	KEY_MOUSE_CHANGE_Y=0
+	KEY_MOUSE_KEYCODE=1
+	KEY_MOUSE_MOVETYPE=0
+	KEY_MOUSE_FLAGS=0
+
+	KEY_GROUP=0
+	KEY_IRC_TEXT=mouse left click - hold 1 minute
+	KEY_GAME_KEYCODE=0
+	KEY_PRESSDOWN_TIME=0
+	KEY_RELEASE_TIME=-1
+	KEY_INTERVAL_TIME=121000						Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+	KEY_MOUSE_CHANGE_X=0
+	KEY_MOUSE_CHANGE_Y=0
+	KEY_MOUSE_KEYCODE=1
+	KEY_MOUSE_MOVETYPE=0
+	KEY_MOUSE_FLAGS=0
+
+KEY_GROUP=0
+KEY_IRC_TEXT=mouse RIGHT click - piranhas
+KEY_GAME_KEYCODE=0
+KEY_PRESSDOWN_TIME=100
+KEY_RELEASE_TIME=100
+KEY_INTERVAL_TIME=17000						Note that interval can not be less then SEND_KEY_THREAD_MINWAIT
+KEY_MOUSE_CHANGE_X=0
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=4
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+
+KEY_GROUP=0
+KEY_IRC_TEXT=mouse move left anti afk 1
+KEY_GAME_KEYCODE=0
+KEY_PRESSDOWN_TIME=100
+KEY_INTERVAL_TIME=130000
+KEY_RELEASE_TIME=0
+KEY_MOUSE_CHANGE_X=-10
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=0
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
+
+KEY_GROUP=0
+KEY_IRC_TEXT=mouse move right anti afk 1
+KEY_GAME_KEYCODE=0
+KEY_PRESSDOWN_TIME=100
+KEY_RELEASE_TIME=0
+KEY_INTERVAL_TIME=130000
+KEY_MOUSE_CHANGE_X=10
+KEY_MOUSE_CHANGE_Y=0
+KEY_MOUSE_KEYCODE=0
+KEY_MOUSE_MOVETYPE=0
+KEY_MOUSE_FLAGS=0
